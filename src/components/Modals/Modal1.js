@@ -7,7 +7,7 @@ import { Modal } from 'antd';
 
 class Modal1 extends Component {
     render(){
-      
+      console.log("DD")
      return (
         <Modal
         title="Basic Modal"

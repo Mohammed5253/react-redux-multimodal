@@ -2,11 +2,15 @@ const initialState = {
     modalType: null,
     modalProps: {},
     show:false,
-    loginshow:false
+    loginshow:false,
+    showpostmodal:false,
+    imagearray:[],
+    articledata:'',
+    imagePreviewUrl:[]
   }
 
 export const custreducers = (state = initialState, action) => {
-    
+    console.log(state.imagePreviewUrl.push('dd'),action)
     switch (action.type) {
         case 'SHOW_MODAL':
           return {
@@ -16,6 +20,15 @@ export const custreducers = (state = initialState, action) => {
           return {
             loginshow:true
           }  
+        case 'SHOW_POST_MODAL':
+          return {
+            showpostmodal:true
+          }
+        case 'ADD_IMAGES':
+          return {
+            ...state,
+            imagePreviewUrl:state.imagePreviewUrl.concat()
+          }    
         case 'HIDE_MODAL':
           return initialState
         default:
